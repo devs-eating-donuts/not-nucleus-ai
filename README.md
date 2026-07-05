@@ -71,14 +71,20 @@ autonomous teammates (auto-approve on) inside the workspace folder you picked.
 - `node-pty` (Windows ConPTY) for CLIs that only emit to a real terminal (e.g. Antigravity)
 - Vitest for the pure/decision logic and the security boundaries
 
-## Run it
+## Run it (from source)
+
+**Prerequisite — an AI coding CLI.** Nucleus-AI drives coding CLIs you install yourself; it holds no
+API keys of its own. Have at least one of **Claude Code**, **Codex**, **Cursor**, **GitHub Copilot**,
+or **Antigravity** installed *and logged in* — first-run onboarding checks for one and helps you assign
+it to the team. Without a CLI, the lifecycle can't run.
 
 ```sh
 # Requires Node.js >= 22.12.0 (Electron Forge 8 refuses older Node). An .nvmrc pins it:
 #   nvm install 22 && nvm use
-npm install         # after PULLING on another machine, use `npm install`, NOT `npm ci`
-                    # (ci wipes node_modules incl. the compiled Windows conpty.node)
-npm run rebuild:pty # one-time after install: builds node-pty for Electron's ABI
+npm install         # deps + Electron (the first install downloads Electron — give it a minute)
+npm start           # launch the app (Vite HMR)
+
+npm run rebuild:pty # required for the in-app role terminals: builds node-pty for Electron's ABI
                     # (scripts/rebuild-pty.mjs). macOS/Linux use electron-rebuild.
                     # WINDOWS needs VISUAL STUDIO 2022 (v17) Build Tools — the "Desktop
                     # development with C++" workload incl. a Windows SDK — plus Python.
@@ -87,7 +93,6 @@ npm run rebuild:pty # one-time after install: builds node-pty for Electron's ABI
                     # NOTE: VS 2026 (v18) does NOT work — node-gyp can't use it yet, so VS
                     # 2022 must be installed even if you have 2026. Without a working
                     # toolchain the PTY-only paths (Antigravity `agy`, role terminals) fail.
-npm start           # dev app with HMR
 npm run typecheck   # strict TS across main, preload, renderer, shared
 npm test            # vitest (decision logic, parsers, path guard, sanitizers)
 npm run package     # packaged build (Forge injects + verifies node-pty)

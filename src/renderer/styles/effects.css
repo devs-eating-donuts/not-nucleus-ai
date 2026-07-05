@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Theme-scoped effects. Everything in this file activates ONLY under
+   [data-theme='series-b-fever-dream'] — the other themes stay calm and
+   professional. Motion respects prefers-reduced-motion.
+   ========================================================================== */
+
+@keyframes neonPulse {
+  0% {
+    filter: brightness(1) var(--logo-glow);
+  }
+  50% {
+    filter: brightness(1.3) var(--logo-glow);
+  }
+  100% {
+    filter: brightness(1) var(--logo-glow);
+  }
+}
+
+@keyframes hoverFlicker {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ----- 80s cyberspace grid + ambient gradients ----- */
+
+[data-theme='series-b-fever-dream'] .shell-main {
+  background:
+    linear-gradient(rgba(0, 247, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 247, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(ellipse at 15% 0%, rgba(255, 45, 251, 0.14), transparent 55%),
+    radial-gradient(ellipse at 90% 100%, rgba(0, 247, 255, 0.1), transparent 50%),
+    var(--bg-app);
+  background-size:
+    36px 36px,
+    36px 36px,
+    auto,
+    auto,
+    auto;
+}
+
+[data-theme='series-b-fever-dream'] .header {
+  background:
+    linear-gradient(90deg, rgba(255, 45, 251, 0.14), rgba(0, 247, 255, 0.08)),
+    var(--bg-surface);
+}
+
+/* ----- Neon glow accents ----- */
+
+[data-theme='series-b-fever-dream'] .btn.primary {
+  box-shadow: var(--glow-neon-pink);
+  text-shadow: none;
+}
+
+[data-theme='series-b-fever-dream'] .nav-item.active {
+  box-shadow: inset 0 0 14px rgba(255, 45, 251, 0.25);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+[data-theme='series-b-fever-dream'] .brand-wordmark,
+[data-theme='series-b-fever-dream'] .about-wordmark {
+  text-shadow: 0 0 12px rgba(255, 45, 251, 0.6);
+}
+
+[data-theme='series-b-fever-dream'] .brand-wordmark .brand-ai,
+[data-theme='series-b-fever-dream'] .about-wordmark .brand-ai {
+  color: var(--accent-2);
+  text-shadow: var(--glow-neon-blue);
+}
+
+[data-theme='series-b-fever-dream'] .badge.tone-ok {
+  box-shadow: var(--glow-neon-green);
+}
+
+/* ----- Motion (opt-out via OS reduced-motion preference) ----- */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-theme='series-b-fever-dream'] .brand-mark,
+  [data-theme='series-b-fever-dream'] .crazy-glow {
+    animation: neonPulse 2.5s infinite ease-in-out;
+  }
+
+  [data-theme='series-b-fever-dream'] .btn:hover {
+    animation: hoverFlicker 0.3s linear 1;
+    box-shadow: var(--glow-neon-blue);
+  }
+}

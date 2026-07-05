@@ -1,0 +1,43 @@
+<svg width="192" height="192" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ron LaFlambé">
+  <!-- Pete cast: Ron LaFlambé — legal counsel, in no particular hurry.
+       Original character: wavy surfer hair, stubble, tie already loosened. -->
+  <defs>
+    <clipPath id="disc-rl"><circle cx="48" cy="48" r="45"/></clipPath>
+  </defs>
+  <circle cx="48" cy="48" r="45" fill="#e9e9d8"/>
+  <g clip-path="url(#disc-rl)">
+    <!-- neck -->
+    <rect x="43" y="56" width="10" height="12" fill="#d9a877" stroke="#24352c" stroke-width="2"/>
+    <!-- shirt, collar spread wide open -->
+    <path d="M13 100 C19 76 31 67 48 67 C65 67 77 76 83 100 Z" fill="#f1e9d2" stroke="#24352c" stroke-width="2.4"/>
+    <path d="M43.5 66 L48 71 L39 74 Z" fill="#e5dabc" stroke="#24352c" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M52.5 66 L48 71 L57 74 Z" fill="#e5dabc" stroke="#24352c" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- the loosened, slightly askew tie -->
+    <g transform="rotate(9 49 74)">
+      <path d="M46.5 70 L51.5 70 L49 74.5 Z" fill="#309e4a" stroke="#24352c" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M47.2 74 L50.8 74 L50.2 87 L47.8 87 Z" fill="#309e4a" stroke="#24352c" stroke-width="1.6" stroke-linejoin="round"/>
+    </g>
+    <!-- ears -->
+    <circle cx="30.5" cy="45" r="3.6" fill="#d9a877" stroke="#24352c" stroke-width="2"/>
+    <circle cx="65.5" cy="45" r="3.6" fill="#d9a877" stroke="#24352c" stroke-width="2"/>
+    <!-- head -->
+    <circle cx="48" cy="44" r="17.5" fill="#d9a877" stroke="#24352c" stroke-width="2.4"/>
+    <!-- wavy, unhurried hair -->
+    <path d="M29.5 45 C28 26 39 20.5 48 20.5 C57 20.5 68 26 66.5 45 C66 47.5 63.5 47.5 63.5 44.5 C64 36 58 30.5 48 30.5 C38 30.5 32 36 32.5 44.5 C32.5 47.5 30 47.5 29.5 45 Z" fill="#33261c" stroke="#24352c" stroke-width="2.2" stroke-linejoin="round"/>
+    <!-- one brow up, the other at rest -->
+    <path d="M37.5 35.5 Q40.5 34 44 35.5" stroke="#24352c" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <line x1="52" y1="37" x2="58.5" y2="37" stroke="#24352c" stroke-width="2" stroke-linecap="round"/>
+    <!-- easy eyes -->
+    <circle cx="41.5" cy="43.5" r="1.9" fill="#24352c"/>
+    <circle cx="54.5" cy="43.5" r="1.9" fill="#24352c"/>
+    <!-- stubble -->
+    <circle cx="42" cy="56.5" r="0.8" fill="#6b503c"/>
+    <circle cx="45" cy="59.5" r="0.8" fill="#6b503c"/>
+    <circle cx="49.5" cy="60.5" r="0.8" fill="#6b503c"/>
+    <circle cx="54" cy="59" r="0.8" fill="#6b503c"/>
+    <circle cx="56.5" cy="55.5" r="0.8" fill="#6b503c"/>
+    <!-- relaxed lopsided smile -->
+    <path d="M43.5 53.5 Q47.5 56.5 52.5 54.2" stroke="#24352c" stroke-width="2" stroke-linecap="round" fill="none"/>
+  </g>
+  <circle cx="48" cy="48" r="45" fill="none" stroke="#24352c" stroke-width="2.4"/>
+</svg>

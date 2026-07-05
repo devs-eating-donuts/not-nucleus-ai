@@ -1,0 +1,32 @@
+# Typecheck + the full vitest suite on all three OSes. windows-latest matters most:
+# the Windows-only security guards (shim refusal, cmd.exe launch quoting) only run there.
+# No packaging/native-build/installer steps here — the suite mocks Electron and runs pure.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      # The suite mocks the `electron` module and never launches the binary — skip the
+      # ~100MB per-OS download. node-pty's own postinstall uses NODE-ABI prebuilds
+      # (present for all three OSes); the Electron-ABI rebuild is not needed for tests.
+      - run: npm ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+      - run: npm run typecheck
+      - run: npx vitest run

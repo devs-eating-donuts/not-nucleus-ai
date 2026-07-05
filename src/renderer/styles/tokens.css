@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Nucleus-AI design tokens.
+   Three built-in themes, switched via <html data-theme="...">:
+     1. nucleus-night          — default dark
+     2. clarity-cloud          — light
+     3. series-b-fever-dream   — neon parody (effects live in effects.css)
+   Components consume semantic tokens only; never raw colors.
+
+   Typography is rem-based behind a global --ui-scale multiplier
+   (html font-size = 16px * --ui-scale), with clamp() viewport scaling so
+   the UI stays readable on laptops and grows on large monitors.
+   ========================================================================== */
+
+:root {
+  /* ----- UI scale (user-controlled, persisted in settings) ----- */
+  --ui-scale: 1;
+
+  /* ----- Type ----- */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-ui: var(--font-sans);
+  --font-mono: 'Cascadia Code', 'Consolas', 'SF Mono', 'Fira Code', monospace;
+
+  /* rem-based clamps: respond to both viewport width and --ui-scale. */
+  --font-size-xs: clamp(0.6875rem, 0.22vw + 0.5rem, 0.8125rem); /* ~11–13px */
+  --font-size-sm: clamp(0.75rem, 0.28vw + 0.55rem, 0.875rem); /* ~12–14px */
+  --font-size-base: clamp(0.875rem, 0.35vw + 0.6rem, 1.125rem); /* ~14–18px */
+  --font-size-lg: clamp(1rem, 0.4vw + 0.65rem, 1.375rem); /* ~16–22px */
+  --font-size-xl: clamp(1.25rem, 0.5vw + 0.85rem, 1.75rem); /* ~20–28px */
+
+  --line-height: 1.5;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* ----- Shape ----- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* ----- Spacing ----- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 20px;
+  --space-xl: 28px;
+
+  /* Legacy numeric scale (kept for existing layout rules). */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --transition-fast: 120ms ease;
+}
+
+/* --------------------------------------------------------------------------
+   1. NUCLEUS NIGHT (default dark) — v3: the Pied Piper palette on dark.
+   Brand anchors: vibrant green #309E4A (accent, lifted for dark-bg contrast),
+   teal #077068 (secondary, brightened), sage #69A6A1 tinting the muted text.
+   -------------------------------------------------------------------------- */
+:root,
+:root[data-theme='nucleus-night'] {
+  --bg-app: #0a100e;
+  --bg-surface: #111c17;
+  --bg-raised: #17261f;
+  --bg-hover: #1e3228;
+  --bg-active: #253e31;
+
+  --border: #2b4537;
+  --border-strong: #3f6350;
+
+  --text-primary: #f1f8f4;
+  --text-secondary: #b7cfc3;
+  --text-muted: #92aca0;
+
+  --accent: #3ab558;
+  --accent-strong: #5fd07c;
+  --accent-contrast: #04130a;
+  --accent-soft: rgba(48, 158, 74, 0.18);
+  --accent-2: #2cc5b8;
+
+  --ok: #22c55e;
+  --ok-soft: rgba(34, 197, 94, 0.16);
+  --warn: #f59e0b;
+  --warn-soft: rgba(245, 158, 11, 0.16);
+  --error: #ef4444;
+  --error-soft: rgba(239, 68, 68, 0.16);
+  --info: #2cc5b8;
+  --info-soft: rgba(44, 197, 184, 0.16);
+
+  --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.6);
+  --logo-glow: none;
+
+  color-scheme: dark;
+}
+
+/* --------------------------------------------------------------------------
+   2. CLARITY CLOUD (light) — the Pied Piper palette's natural home.
+   Exact brand hexes: #FBFCFC surface, #E0E8E7-family app bg, #C9E4D6 mint
+   tints, #309E4A accent (hover deepens into teal #077068), #69A6A1 sage
+   for strong borders.
+   -------------------------------------------------------------------------- */
+:root[data-theme='clarity-cloud'] {
+  --bg-app: #edf2f0;
+  --bg-surface: #fbfcfc;
+  --bg-raised: #ffffff;
+  --bg-hover: #e3eee8;
+  --bg-active: #d3e6db;
+
+  --border: #d2e0d8;
+  --border-strong: #69a6a1;
+
+  --text-primary: #17251f;
+  --text-secondary: #42584e;
+  --text-muted: #6d8880;
+
+  --accent: #309e4a;
+  --accent-strong: #077068;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(48, 158, 74, 0.12);
+  --accent-2: #077068;
+
+  --ok: #059669;
+  --ok-soft: rgba(5, 150, 105, 0.1);
+  --warn: #b45309;
+  --warn-soft: rgba(180, 83, 9, 0.1);
+  --error: #dc2626;
+  --error-soft: rgba(220, 38, 38, 0.1);
+  --info: #077068;
+  --info-soft: rgba(7, 112, 104, 0.1);
+
+  --shadow-card: 0 4px 14px rgba(23, 37, 31, 0.08);
+  --logo-glow: none;
+
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------------------------
+   3. SERIES B FEVER DREAM — v2. Properly unhinged.
+   Confidence: unbounded. Contrast ratios: an implementation detail.
+   Motion and glow effects are scoped in effects.css, toggle-only.
+   -------------------------------------------------------------------------- */
+:root[data-theme='series-b-fever-dream'] {
+  --bg-app: #05000f;
+  --bg-surface: #1c003a;
+  --bg-raised: #2d005a;
+  --bg-hover: #38006e;
+  --bg-active: #44008a;
+
+  --border: rgba(255, 0, 224, 0.55);
+  --border-strong: #ff00e0;
+
+  --text-primary: #fff0ff;
+  --text-secondary: #f7c9ff;
+  --text-muted: #ff9be8;
+
+  --accent: #ff2dfb;
+  --accent-strong: #fffb00; /* hover goes yellow. on purpose. */
+  --accent-contrast: #1a0030;
+  --accent-soft: rgba(255, 45, 251, 0.18);
+  --accent-2: #00f7ff;
+
+  --ok: #39ff14;
+  --ok-soft: rgba(57, 255, 20, 0.16);
+  --warn: #ff9f1c;
+  --warn-soft: rgba(255, 159, 28, 0.16);
+  --error: #ff3366;
+  --error-soft: rgba(255, 51, 102, 0.16);
+  --info: #00f7ff;
+  --info-soft: rgba(0, 247, 255, 0.16);
+
+  --glow-neon-pink: 0 0 18px #ff00e0;
+  --glow-neon-blue: 0 0 18px #00f7ff;
+  --glow-neon-green: 0 0 18px #39ff14;
+
+  --shadow-card: 0 0 40px rgba(255, 0, 255, 0.4);
+  --logo-glow: drop-shadow(0 0 8px #ff00e0);
+
+  color-scheme: dark;
+}

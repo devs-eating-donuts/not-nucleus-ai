@@ -1,0 +1,36 @@
+<svg width="192" height="192" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Erlich Bachlund">
+  <!-- Pete cast: Erlich Bachlund — the visionary stakeholder. Original
+       character: walrus mustache, swept-back hair, ascot. Owns 10% of this SVG. -->
+  <defs>
+    <clipPath id="disc-eb"><circle cx="48" cy="48" r="45"/></clipPath>
+  </defs>
+  <circle cx="48" cy="48" r="45" fill="#e7ecd9"/>
+  <g clip-path="url(#disc-eb)">
+    <!-- neck -->
+    <rect x="43" y="56" width="10" height="12" fill="#eccca4" stroke="#24352c" stroke-width="2"/>
+    <!-- open-collar shirt -->
+    <path d="M13 100 C19 76 31 67 48 67 C65 67 77 76 83 100 Z" fill="#c99a3f" stroke="#24352c" stroke-width="2.4"/>
+    <!-- draped ascot -->
+    <path d="M40 67 C42 72 54 72 56 67 L54 78 C51 81 45 81 42 78 Z" fill="#2f9e8f" stroke="#24352c" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="45" cy="72" r="1.1" fill="#e3eee8"/>
+    <circle cx="50" cy="74.5" r="1.1" fill="#e3eee8"/>
+    <circle cx="52.5" cy="70.5" r="1.1" fill="#e3eee8"/>
+    <!-- ears -->
+    <circle cx="30.5" cy="45" r="3.6" fill="#eccca4" stroke="#24352c" stroke-width="2"/>
+    <circle cx="65.5" cy="45" r="3.6" fill="#eccca4" stroke="#24352c" stroke-width="2"/>
+    <!-- head -->
+    <circle cx="48" cy="44" r="17.5" fill="#eccca4" stroke="#24352c" stroke-width="2.4"/>
+    <!-- swept-back hair, generous volume -->
+    <path d="M30.5 40 C28.5 23 40 19.5 48 19.5 C56 19.5 67.5 23 65.5 40 C64.5 30 57 26.5 48 26.5 C39 26.5 31.5 30 30.5 40 Z" fill="#b9793a" stroke="#24352c" stroke-width="2.2" stroke-linejoin="round"/>
+    <!-- brows: one raised, naturally -->
+    <path d="M37.5 37.5 L44 37" stroke="#24352c" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M52 35 Q55.5 33.5 58.5 35.5" stroke="#24352c" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <!-- eyes -->
+    <circle cx="41.5" cy="43.5" r="1.9" fill="#24352c"/>
+    <circle cx="54.5" cy="42.8" r="1.9" fill="#24352c"/>
+    <!-- walrus mustache + chin scruff -->
+    <path d="M38.5 51.5 C41.5 48.5 45.5 49.5 48 51 C50.5 49.5 54.5 48.5 57.5 51.5 C55.5 55 51.5 55.5 48 53.6 C44.5 55.5 40.5 55 38.5 51.5 Z" fill="#a3622c" stroke="#24352c" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M44 59.5 C45.5 58 50.5 58 52 59.5 C51 61.5 45 61.5 44 59.5 Z" fill="#a3622c" stroke="#24352c" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
+  <circle cx="48" cy="48" r="45" fill="none" stroke="#24352c" stroke-width="2.4"/>
+</svg>

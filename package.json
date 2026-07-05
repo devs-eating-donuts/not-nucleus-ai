@@ -1,0 +1,58 @@
+{
+  "name": "nucleus-ai",
+  "productName": "Nucleus-AI",
+  "version": "1.0.0",
+  "description": "Nucleus-AI — AI team orchestration for builders. Powered by Hoolisoft. Created by Pipeline Labs.",
+  "main": ".vite/build/main.js",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "icons": "node scripts/generate-icons.mjs",
+    "rebuild:pty": "node scripts/rebuild-pty.mjs"
+  },
+  "author": {
+    "name": "Pipeline Labs",
+    "email": "build@pipelinelabs.example"
+  },
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "dependencies": {
+    "@homebridge/node-pty-prebuilt-multiarch": "^0.13.1",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.6.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "8.0.0-alpha.9",
+    "@electron-forge/maker-deb": "8.0.0-alpha.9",
+    "@electron-forge/maker-dmg": "8.0.0-alpha.9",
+    "@electron-forge/maker-rpm": "8.0.0-alpha.9",
+    "@electron-forge/maker-squirrel": "8.0.0-alpha.9",
+    "@electron-forge/maker-zip": "8.0.0-alpha.9",
+    "@electron-forge/plugin-fuses": "8.0.0-alpha.9",
+    "@electron-forge/plugin-vite": "8.0.0-alpha.9",
+    "@electron/fuses": "^2.1.2",
+    "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^6.0.3",
+    "@vitest/coverage-v8": "^4.1.9",
+    "electron": "^41.7.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "vite": "^8.1.0",
+    "vitest": "^4.1.8"
+  }
+}

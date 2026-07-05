@@ -1,0 +1,13 @@
+node_modules/
+.vite/
+out/
+dist/
+*.log
+.DS_Store
+Thumbs.db
+
+# Persona portraits: the public-safe `pete` cast ships as plaintext SVG under
+# src/renderer/assets/personas/pete/. The show-likeness tiers are NOT stored as
+# viewable images — they live ENCRYPTED in src/renderer/assets/vault/ (AES-GCM,
+# keyed on the scavenger-hunt answers; see src/shared/imageVault.ts). Never commit
+# a plaintext show-likeness raster to this public repo.

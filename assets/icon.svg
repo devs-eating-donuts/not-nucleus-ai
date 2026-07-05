@@ -1,0 +1,10 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nucleus-AI">
+  <rect x="84" y="84" width="856" height="856" rx="190" fill="#0c1a14" stroke="rgba(105,166,161,0.25)" stroke-width="8"/>
+  <ellipse cx="512" cy="512" rx="300" ry="126" transform="rotate(-32 512 512)" fill="none" stroke="#3ab558" stroke-width="18"/>
+  <ellipse cx="512" cy="512" rx="300" ry="126" transform="rotate(32 512 512)" fill="none" stroke="#9ac0b4" stroke-width="15" opacity="0.5"/>
+  <line x1="397" y1="685" x2="627" y2="339" stroke="#eef8f2" stroke-width="36" stroke-linecap="round"/>
+  <circle cx="512" cy="512" r="75" fill="#3ab558"/>
+  <circle cx="512" cy="512" r="29" fill="#0c1a14"/>
+  <circle cx="247" cy="385" r="32" fill="#5fd07c"/>
+  <circle cx="777" cy="639" r="32" fill="#2cc5b8"/>
+</svg>

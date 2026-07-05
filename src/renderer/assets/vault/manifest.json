@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "key": "cartoons/bighead-bignetti",
+      "path": "distinct/bighead-bignetti.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/dinesh-chugbyte",
+      "path": "distinct/dinesh-chugbyte.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/erlich-bachlund",
+      "path": "distinct/erlich-bachlund.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/gavin-belch",
+      "path": "distinct/gavin-belch.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/gilfoyle-zerotrust",
+      "path": "distinct/gilfoyle-zerotrust.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/jack-barkley",
+      "path": "distinct/jack-barkley.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/jared-dunnison",
+      "path": "distinct/jared-dunnison.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/laurie-bramwell",
+      "path": "distinct/laurie-bramwell.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/monica-hallmark",
+      "path": "distinct/monica-hallmark.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/peter-gregorix",
+      "path": "distinct/peter-gregorix.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/richard-henderstack",
+      "path": "distinct/richard-henderstack.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/ron-laflambe",
+      "path": "distinct/ron-laflambe.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "cartoons/russ-hanneford",
+      "path": "distinct/russ-hanneford.jpg.enc",
+      "tier": "distinct"
+    },
+    {
+      "key": "bighead-bignetti",
+      "path": "cover/bighead-bignetti.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "dinesh-chugbyte",
+      "path": "cover/dinesh-chugbyte.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "erlich-bachlund",
+      "path": "cover/erlich-bachlund.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "gavin-belch",
+      "path": "cover/gavin-belch.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "gilfoyle-zerotrust",
+      "path": "cover/gilfoyle-zerotrust.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "jack-barkley",
+      "path": "cover/jack-barkley.jpg.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "jared-dunnison",
+      "path": "cover/jared-dunnison.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "laurie-bramwell",
+      "path": "cover/laurie-bramwell.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "monica-hallmark",
+      "path": "cover/monica-hallmark.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "peter-gregorix",
+      "path": "cover/peter-gregorix.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "richard-henderstack",
+      "path": "cover/richard-henderstack.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "ron-laflambe",
+      "path": "cover/ron-laflambe.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "russ-hanneford",
+      "path": "cover/russ-hanneford.webp.enc",
+      "tier": "cover"
+    },
+    {
+      "key": "distinct/jian-yang-photo",
+      "path": "canon/jian-yang-photo.webp.enc",
+      "tier": "canon"
+    },
+    {
+      "key": "distinct/jian-yang",
+      "path": "canon/jian-yang.jpg.enc",
+      "tier": "canon"
+    }
+  ]
+}

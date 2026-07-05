@@ -1,0 +1,37 @@
+<svg width="192" height="192" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Laurie Bramwell">
+  <!-- Pete cast: Laurie Bramwell — Raviga's successor. Original character:
+       angular black bob, thin glasses, perfectly level mouth. This outcome is
+       optimal. -->
+  <defs>
+    <clipPath id="disc-lb"><circle cx="48" cy="48" r="45"/></clipPath>
+  </defs>
+  <circle cx="48" cy="48" r="45" fill="#dcebe7"/>
+  <g clip-path="url(#disc-lb)">
+    <!-- angular bob behind the head -->
+    <path d="M29.5 34 C29.5 22 66.5 22 66.5 34 L67 61 L59.5 61 L59 39 C54 34.5 42 34.5 37 39 L36.5 61 L29 61 Z" fill="#1f1b18" stroke="#24352c" stroke-width="2.2" stroke-linejoin="round"/>
+    <!-- neck -->
+    <rect x="43" y="56" width="10" height="12" fill="#f3ddc4" stroke="#24352c" stroke-width="2"/>
+    <!-- structured blazer, high closed collar -->
+    <path d="M13 100 C19 76 31 67 48 67 C65 67 77 76 83 100 Z" fill="#476b60" stroke="#24352c" stroke-width="2.4"/>
+    <path d="M42 66.5 L48 72 L54 66.5" stroke="#2f4f45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- ears -->
+    <circle cx="30.5" cy="45" r="3.6" fill="#f3ddc4" stroke="#24352c" stroke-width="2"/>
+    <circle cx="65.5" cy="45" r="3.6" fill="#f3ddc4" stroke="#24352c" stroke-width="2"/>
+    <!-- head -->
+    <circle cx="48" cy="44" r="17.5" fill="#f3ddc4" stroke="#24352c" stroke-width="2.4"/>
+    <!-- straight blunt fringe -->
+    <path d="M30.5 38 C30.5 25 65.5 25 65.5 38 L65.5 33.5 C59 30 37 30 30.5 33.5 Z" fill="#1f1b18" stroke="#24352c" stroke-width="2.2" stroke-linejoin="round"/>
+    <!-- precise level brows -->
+    <line x1="37.8" y1="37" x2="43.8" y2="37" stroke="#24352c" stroke-width="2" stroke-linecap="round"/>
+    <line x1="52.2" y1="37" x2="58.2" y2="37" stroke="#24352c" stroke-width="2" stroke-linecap="round"/>
+    <!-- thin rectangular glasses -->
+    <rect x="36.2" y="41" width="10.4" height="6.4" rx="1.6" fill="rgba(255,255,255,0.35)" stroke="#24352c" stroke-width="1.8"/>
+    <rect x="49.4" y="41" width="10.4" height="6.4" rx="1.6" fill="rgba(255,255,255,0.35)" stroke="#24352c" stroke-width="1.8"/>
+    <line x1="46.6" y1="43.2" x2="49.4" y2="43.2" stroke="#24352c" stroke-width="1.8"/>
+    <circle cx="41.4" cy="44" r="1.7" fill="#24352c"/>
+    <circle cx="54.6" cy="44" r="1.7" fill="#24352c"/>
+    <!-- a mouth calibrated to exactly neutral -->
+    <line x1="45.2" y1="55" x2="50.8" y2="55" stroke="#24352c" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <circle cx="48" cy="48" r="45" fill="none" stroke="#24352c" stroke-width="2.4"/>
+</svg>

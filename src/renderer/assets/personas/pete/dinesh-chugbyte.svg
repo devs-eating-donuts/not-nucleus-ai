@@ -1,0 +1,40 @@
+<svg width="192" height="192" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dinesh Chugbyte">
+  <!-- Pete cast: Dinesh Chugbyte — the developer. Original character: neat
+       black hair, chinstrap stubble, headphones, code-bracket tee. Ships fast. -->
+  <defs>
+    <clipPath id="disc-dc"><circle cx="48" cy="48" r="45"/></clipPath>
+  </defs>
+  <circle cx="48" cy="48" r="45" fill="#d8ecdf"/>
+  <g clip-path="url(#disc-dc)">
+    <!-- neck -->
+    <rect x="43" y="56" width="10" height="12" fill="#c68e5f" stroke="#24352c" stroke-width="2"/>
+    <!-- developer tee -->
+    <path d="M13 100 C19 76 31 67 48 67 C65 67 77 76 83 100 Z" fill="#309e4a" stroke="#24352c" stroke-width="2.4"/>
+    <!-- code brackets on the chest -->
+    <path d="M42 78 L38 82 L42 86" stroke="#f1e9d2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M50 76.5 L46 87.5" stroke="#f1e9d2" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M54 78 L58 82 L54 86" stroke="#f1e9d2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- headphones resting around the neck -->
+    <path d="M36 69 Q48 78 60 69" stroke="#24352c" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <circle cx="36" cy="68.5" r="3.6" fill="#2cc5b8" stroke="#24352c" stroke-width="2"/>
+    <circle cx="60" cy="68.5" r="3.6" fill="#2cc5b8" stroke="#24352c" stroke-width="2"/>
+    <!-- ears -->
+    <circle cx="30.5" cy="45" r="3.6" fill="#c68e5f" stroke="#24352c" stroke-width="2"/>
+    <circle cx="65.5" cy="45" r="3.6" fill="#c68e5f" stroke="#24352c" stroke-width="2"/>
+    <!-- head -->
+    <circle cx="48" cy="44" r="17.5" fill="#c68e5f" stroke="#24352c" stroke-width="2.4"/>
+    <!-- chinstrap stubble -->
+    <path d="M32.5 47 C33.5 60 41 65 48 65 C55 65 62.5 60 63.5 47 C61.5 56.5 55 60.5 48 60.5 C41 60.5 34.5 56.5 32.5 47 Z" fill="#3a322c" stroke="#24352c" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- neat short hair -->
+    <path d="M30.5 40 C30 26.5 38 22.5 48 22.5 C58 22.5 66 26.5 65.5 40 C63 32.5 57 30.5 48 30.5 C39 30.5 33 32.5 30.5 40 Z" fill="#1e1a17" stroke="#24352c" stroke-width="2.2" stroke-linejoin="round"/>
+    <!-- confident brows -->
+    <path d="M37.5 36.5 L44 36" stroke="#24352c" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M52 36 L58.5 36.5" stroke="#24352c" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- eyes -->
+    <circle cx="41.5" cy="43.5" r="1.9" fill="#24352c"/>
+    <circle cx="54.5" cy="43.5" r="1.9" fill="#24352c"/>
+    <!-- smug shipping smirk -->
+    <path d="M43.5 54 Q48.5 57 52.5 53.5" stroke="#24352c" stroke-width="2" stroke-linecap="round" fill="none"/>
+  </g>
+  <circle cx="48" cy="48" r="45" fill="none" stroke="#24352c" stroke-width="2.4"/>
+</svg>

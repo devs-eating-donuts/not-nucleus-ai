@@ -53,11 +53,19 @@ function RewardArt({ trigger }: { trigger: EggTriggerId }) {
  */
 export function EasterEggDialog({ trigger, onClose }: EasterEggDialogProps) {
   const crackedEggs = useAppStore((s) => s.settings.crackedEggs);
+  const crackedAnswers = useAppStore((s) => s.settings.crackedAnswers);
   const crackEgg = useAppStore((s) => s.crackEgg);
 
   const clue = clueForTrigger(trigger);
   const clueNumber = EASTER_EGG_CLUES.findIndex((c) => c.id === clue.id) + 1;
   const cracked = crackedEggs.includes(clue.id);
+  /**
+   * Cracked BEFORE the image vault existed (an upgrade from the soft-gate era):
+   * the tier is unlocked but its answer — the vault decryption key — was never
+   * stored, so the portrait art can't decrypt. Offer the answer box again;
+   * re-answering stores the key and reopens the tier's art.
+   */
+  const needsVaultKey = cracked && crackedAnswers[clue.id] === undefined;
 
   const [guess, setGuess] = useState('');
   const [checking, setChecking] = useState(false);
@@ -149,6 +157,44 @@ export function EasterEggDialog({ trigger, onClose }: EasterEggDialogProps) {
 
   const renderChatter = () => <p className="egg-clue">{line}</p>;
 
+  /** Chatter + the answer box: a pre-vault crack re-supplies the missing key. */
+  const renderRekey = () => (
+    <>
+      <p className="egg-clue">{line}</p>
+      <p className="egg-note">
+        Since you were last here, the portrait art moved into an encrypted vault — and the
+        answer is the key. Say it once more to reopen this one.
+      </p>
+      <p className="egg-clue">{clue.clue}</p>
+      <div className="egg-answer-row">
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Your answer…"
+          value={guess}
+          disabled={checking}
+          onChange={(e) => setGuess(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              void submit();
+            }
+          }}
+        />
+        <button
+          type="button"
+          className="btn primary"
+          disabled={checking || guess.trim() === ''}
+          onClick={() => void submit()}
+        >
+          Answer
+        </button>
+      </div>
+      {wrongCount > 0 && (
+        <p className="egg-wrong">{WRONG_LINES[(wrongCount - 1) % WRONG_LINES.length]}</p>
+      )}
+    </>
+  );
+
   const renderQuestion = () => (
     <>
       <h3 className="egg-title">{QUESTION_TITLES[trigger]}</h3>
@@ -200,7 +246,13 @@ export function EasterEggDialog({ trigger, onClose }: EasterEggDialogProps) {
             <TriggerArt trigger={trigger} />
           </div>
           <div className="egg-content">
-            {beat !== null ? renderCelebration() : cracked ? renderChatter() : renderQuestion()}
+            {beat !== null
+              ? renderCelebration()
+              : !cracked
+                ? renderQuestion()
+                : needsVaultKey
+                  ? renderRekey()
+                  : renderChatter()}
           </div>
         </div>
         <div className="egg-footer">

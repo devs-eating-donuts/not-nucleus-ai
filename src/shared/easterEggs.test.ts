@@ -11,16 +11,27 @@ import {
   triggerVisible,
 } from './easterEggs';
 
-const [circling, questionable, noLawyers] = EASTER_EGG_CLUES;
+const [circling, questionable] = EASTER_EGG_CLUES;
+
+/**
+ * The REAL trivia answers are deliberately NOT in this file (or anywhere in the
+ * repo) — they are the image-vault decryption keys (shared/imageVault.ts), and
+ * committing a plaintext answer would defeat the vault. The accept path is
+ * tested against a SYNTHETIC clue whose hash is computed right here.
+ */
+async function sha256Hex(text: string): Promise<string> {
+  const digest = await globalThis.crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
 
 describe('normalizeAnswer', () => {
   it('lowercases and strips spaces, hyphens, and punctuation', () => {
-    expect(normalizeAnswer('Middle-Out')).toBe('middleout');
-    expect(normalizeAnswer('  middle out ')).toBe('middleout');
-    expect(normalizeAnswer("Newell Road, Strategic Technologies!")).toBe(
-      'newellroadstrategictechnologies',
-    );
-    expect(normalizeAnswer('BACHMANITY')).toBe('bachmanity');
+    expect(normalizeAnswer('Tres-Commas')).toBe('trescommas');
+    expect(normalizeAnswer('  tres commas ')).toBe('trescommas');
+    expect(normalizeAnswer('Conjoined, Triangles!')).toBe('conjoinedtriangles');
+    expect(normalizeAnswer('AVIATO')).toBe('aviato');
   });
 
   it('keeps digits', () => {
@@ -29,24 +40,27 @@ describe('normalizeAnswer', () => {
 });
 
 describe('checkAnswer (against the stored hashes)', () => {
-  it('accepts the real answers in any reasonable typing', async () => {
-    expect(await checkAnswer(circling, 'middle out')).toBe(true);
-    expect(await checkAnswer(circling, 'Middle-Out')).toBe(true);
-    expect(await checkAnswer(questionable, 'Bachmanity')).toBe(true);
-    expect(await checkAnswer(noLawyers, 'Newell Road Strategic Technologies')).toBe(true);
-    expect(await checkAnswer(noLawyers, 'newell-road strategic technologies.')).toBe(true);
+  it('accepts a correct answer in any reasonable typing (synthetic clue)', async () => {
+    const synthetic = { ...circling, answerHash: await sha256Hex('opensesame') };
+    expect(await checkAnswer(synthetic, 'open sesame')).toBe(true);
+    expect(await checkAnswer(synthetic, 'Open-Sesame')).toBe(true);
+    expect(await checkAnswer(synthetic, '  OPEN, sesame!  ')).toBe(true);
   });
 
-  it('rejects wrong and empty guesses', async () => {
+  it('rejects wrong and empty guesses against the real clues', async () => {
     expect(await checkAnswer(circling, 'bottom up')).toBe(false);
     expect(await checkAnswer(questionable, 'Aviato')).toBe(false);
     expect(await checkAnswer(circling, '')).toBe(false);
     expect(await checkAnswer(circling, '   ')).toBe(false);
   });
 
-  it('does not accept one clue’s answer for another', async () => {
-    expect(await checkAnswer(questionable, 'middle out')).toBe(false);
-    expect(await checkAnswer(noLawyers, 'bachmanity')).toBe(false);
+  it('every clue carries a distinct answer hash (no clue accepts another’s answer)', () => {
+    const hashes = EASTER_EGG_CLUES.map((c) => c.answerHash);
+    expect(new Set(hashes).size).toBe(EASTER_EGG_CLUES.length);
+    // 64 lowercase hex chars each — a real SHA-256, not a placeholder.
+    for (const h of hashes) {
+      expect(h).toMatch(/^[0-9a-f]{64}$/);
+    }
   });
 });
 

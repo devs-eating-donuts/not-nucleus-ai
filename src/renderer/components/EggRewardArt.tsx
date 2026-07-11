@@ -5,6 +5,7 @@
  *   clue 3 → a shield, then Jian Yang wakes, then the 🌭 hot dog.
  * Decoration/reward, never breadcrumbs.
  */
+import { useAppStore } from '../state/appStore';
 
 const OUTLINE = '#24352c';
 
@@ -115,16 +116,19 @@ export function HotDog({ width = 140 }: { width?: number }) {
   );
 }
 
-/** The one show-likeness beat of the hunt: Jian Yang's takeover portrait
- * (already a tracked private-build asset). Resolved via glob so a missing
- * file degrades to nothing instead of breaking the build. */
+/** The one show-likeness beat of the hunt: Jian Yang's takeover portrait.
+ * Read from the image vault (decrypted moments earlier by the very crack that
+ * triggers this beat — see crackEgg → unlockVaultTier), with a glob fallback
+ * for a tree that still carries the plaintext raster. Either source missing
+ * degrades to nothing instead of breaking the build. */
 const jianYangArt = import.meta.glob('../assets/personas/distinct/jian-yang.*', {
   eager: true,
   import: 'default',
 }) as Record<string, string>;
 
 export function JianYangWakes({ size = 96 }: { size?: number }) {
-  const src = Object.values(jianYangArt)[0];
+  const decrypted = useAppStore((s) => s.decryptedPortraits['distinct/jian-yang']);
+  const src = decrypted ?? Object.values(jianYangArt)[0];
   if (!src) {
     return null;
   }

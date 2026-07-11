@@ -101,6 +101,26 @@ describe('sanitizeSettings', () => {
         .jianYangAwake,
     ).toBe(true);
   });
+
+  // The image-vault keys: an answer is kept ONLY for a tier that is actually
+  // cracked (a stray answer for an uncracked tier would leak the trivia), and
+  // only when it is a non-empty string.
+  it('keeps crackedAnswers only for cracked tiers, strings only', () => {
+    const s = sanitizeSettings({
+      crackedEggs: ['distinct'],
+      crackedAnswers: { distinct: 'some answer', cover: 'not cracked yet', canon: 42, pete: 'x' },
+    });
+    expect(s.crackedAnswers).toEqual({ distinct: 'some answer' });
+  });
+
+  it('defaults crackedAnswers to empty and drops blank/garbage values', () => {
+    expect(sanitizeSettings({}).crackedAnswers).toEqual({});
+    const s = sanitizeSettings({
+      crackedEggs: ['distinct', 'cover'],
+      crackedAnswers: { distinct: '   ', cover: { deep: true } },
+    });
+    expect(s.crackedAnswers).toEqual({});
+  });
 });
 
 describe('sanitizeRoleConfiguration / assignment', () => {

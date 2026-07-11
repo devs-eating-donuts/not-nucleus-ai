@@ -11,3 +11,7 @@ Thumbs.db
 # viewable images — they live ENCRYPTED in src/renderer/assets/vault/ (AES-GCM,
 # keyed on the scavenger-hunt answers; see src/shared/imageVault.ts). Never commit
 # a plaintext show-likeness raster to this public repo.
+
+# scratch/ holds throwaway build outputs (e.g. the bundled vault tool — see
+# scripts/vault-tool.ts for the esbuild command); nothing in it is tracked.
+scratch/

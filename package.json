@@ -1,7 +1,7 @@
 {
   "name": "nucleus-ai",
   "productName": "Nucleus-AI",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Nucleus-AI — AI team orchestration for builders. Powered by Hoolisoft. Created by Pipeline Labs.",
   "main": ".vite/build/main.js",
   "private": true,
